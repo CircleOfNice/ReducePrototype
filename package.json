@@ -1,5 +1,5 @@
 {
-  "name": "@circle/reduce-prototype-chain",
+  "name": "@circle/reduce-prototype",
   "version": "1.0.0",
   "description": "reduces an object's prototype chain",
   "main": "index.js",
