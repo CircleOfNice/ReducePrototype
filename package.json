@@ -1,0 +1,44 @@
+{
+  "name": "@circle/reduce-prototype-chain",
+  "version": "1.0.0",
+  "description": "reduces an object's prototype chain",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CircleOfNice/reducePrototypeChain.git"
+  },
+  "keywords": [
+    "object",
+    "prototype",
+    "prototype-chain",
+    "reduce"
+  ],
+  "author": "CRCL UG (haftungsbeschränkt)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/CircleOfNice/reducePrototypeChain/issues"
+  },
+  "homepage": "https://github.com/CircleOfNice/reducePrototypeChain#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0",
+    "esdoc": "^0.4.8",
+    "esdoc-es7-plugin": "0.0.3",
+    "esdoc-flow-plugin": "^1.0.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "flow-bin": "^0.46.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.1",
+    "remap-istanbul": "^0.9.5"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "plugins": [
+    {"name": "esdoc-es7-plugin"},
+    {"name": "esdoc-flow-plugin"}
+  ],
+  "excludes": ["node_modules", "lib", "__tests__", "cpp"],
+  "autoPrivate": false
+}
