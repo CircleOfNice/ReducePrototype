@@ -38,8 +38,49 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="reduceprototypechain">reducePrototypeChain</h1>
-<p>reduce an object&apos;s prototype chain</p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="reduceprototype">ReducePrototype</h1>
+<p>This package contains two little helper functions to work with the prototype chain of an object or a class.</p>
+<h1 id="usage">Usage</h1>
+<p>Just use the functions below as if you would reduce any other iterable, with the only exception, that a fourh parameter
+sets a constructor which stops the iteration if it&apos;s prototype occurs.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { reducePrototypeChain, reduceInheritanceChain } from &quot;reduce-prototype&quot;
+
+class A {
+    test() {}
+}
+
+class B {
+    test2() {}
+}
+
+class C extends A {
+    test3() {}
+}
+
+const instance = new C();
+
+// now we have the methods test, test2 and test3 in our array
+const allMethods = reducePrototypeChain(instance, (dest, proto) =&gt; dest.concat(Object.getOwnPropertyNames(proto)), [])
+    .filter(key =&gt; instance[key] instanceof Function)
+    .map(key =&gt; instance[key]);
+
+// now we have the methods test2 and test3 in our array
+const bAndCMethods = reduceInheritanceChain(C, (dest, proto) =&gt; dest.concat(Object.getOwnPropertyNames(proto)), [], A)
+    .filter(key =&gt; instance[key] instanceof Function)
+    .map(key =&gt; instance[key])</code>
+</code></pre>
+<h1 id="testing">Testing</h1>
+<p>You can test <code>reducePrototype</code> with mocha by executing <code>make test</code> in the root directory of the project.</p>
+<h1 id="contributing">Contributing</h1>
+<p>If you want to contribute to this repository, please ensure ...</p>
+<ul>
+<li>to use <code>make</code> for development (it validates the source code and transpiles it to <code>/lib</code>).</li>
+<li>to follow the existing coding style.</li>
+<li>to use the linting tools that are listed in the <code>package.json</code> (which you get for free when using <code>make</code>).</li>
+<li>to add and/or customize unit tests for any changed code.</li>
+<li>to reference the corresponding issue in your pull request with a small description of your changes.</li>
+</ul>
+<p>All contributors are listed in the <code>AUTHORS</code> file, sorted by the time of their first contribution.</p>
 </div>
 </div>
 

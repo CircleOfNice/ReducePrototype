@@ -4,10 +4,11 @@ This package contains two little helper functions to work with the prototype cha
 
 # Usage
 
-Just use the functions as if you would reduce any other iterable, with the exception, that a fourh parameter
+Just use the functions below as if you would reduce any other iterable, with the only exception, that a fourh parameter
 sets a constructor which stops the iteration if it's prototype occurs.
 
 ```js
+import { reducePrototypeChain, reduceInheritanceChain } from "reduce-prototype"
 
 class A {
     test() {}
@@ -29,7 +30,7 @@ const allMethods = reducePrototypeChain(instance, (dest, proto) => dest.concat(O
     .map(key => instance[key]);
 
 // now we have the methods test2 and test3 in our array
-const bAndCMethods = reducePrototypeChain(C, (dest, proto) => dest.concat(Object.getOwnPropertyNames(proto)), [], A)
+const bAndCMethods = reduceInheritanceChain(C, (dest, proto) => dest.concat(Object.getOwnPropertyNames(proto)), [], A)
     .filter(key => instance[key] instanceof Function)
     .map(key => instance[key])
 ```

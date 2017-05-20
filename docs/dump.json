@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "/*\n * This file is part of CoreWorker.\n *\n * CoreWorker is free software: you can redistribute it and/or modify\n * it under the terms of the GNU General Public License as published by\n * the Free Software Foundation, either version 3 of the License, or\n * (at your option) any later version.\n *\n * CoreWorker is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n * GNU General Public License for more details.\n * You should have received a copy of the GNU General Public License\n * along with CoreWorker.  If not, see <http://www.gnu.org/licenses/>.\n *\n * Copyright 2017 TeeAge-Beatz UG (haftungsbeschränkt)\n */\n\n// @flow\n\nexport type Reducer = (dest: *, proto: Object, instance: Object) => *;\n\n/**\n * takes an object and reduces its prototype chain with\n * a given callback\n *\n * @param  {Object}    instance to be reduced\n * @param  {Reducer}   reducer  function\n * @param  {*}         carry    to be reduced into\n * @param  {Function?} stop     constructor to break reducer\n * @return {*}\n */\nexport function reducePrototypeChain(instance: Object, reducer: Reducer, carry: any, stop?: Function = Object): any {\n    const proto = Object.getPrototypeOf(instance);\n\n    if(proto === stop.prototype) return carry;\n\n    const result = reducer(carry, proto, instance);\n\n    return reducePrototypeChain(proto, reducer, result, stop);\n}\n\n/**\n * takes a class and reduces its prototype chain with\n * a given callback\n *\n * @param  {Function}  constr  constructor function of class\n * @param  {Reducer}   reducer function\n * @param  {*}         carry   to be reduced into\n * @param  {Function?} stop    constructor to break reducer\n * @return {*}\n */\nexport function reduceInheritanceChain(constr: Function, reducer: Reducer, carry: any, stop?: Function = Object): any {\n    return reducePrototypeChain(Object.create(constr.prototype, {}), reducer, carry, stop);\n}\n"
+    "content": "// @flow\n\nexport type Reducer = (dest: *, proto: Object, instance: Object) => *;\n\n/**\n * takes an object and reduces its prototype chain with\n * a given callback\n *\n * @param  {Object}    instance to be reduced\n * @param  {Reducer}   reducer  function\n * @param  {*}         carry    to be reduced into\n * @param  {Function?} stop     constructor to break reducer\n * @return {*}\n */\nexport function reducePrototypeChain(instance: Object, reducer: Reducer, carry: any, stop?: Function = Object): any {\n    const proto = Object.getPrototypeOf(instance);\n\n    if(proto === stop.prototype) return carry;\n\n    const result = reducer(carry, proto, instance);\n\n    return reducePrototypeChain(proto, reducer, result, stop);\n}\n\n/**\n * takes a class and reduces its prototype chain with\n * a given callback\n *\n * @param  {Function}  constr  constructor function of class\n * @param  {Reducer}   reducer function\n * @param  {*}         carry   to be reduced into\n * @param  {Function?} stop    constructor to break reducer\n * @return {*}\n */\nexport function reduceInheritanceChain(constr: Function, reducer: Reducer, carry: any, stop?: Function = Object): any {\n    return reducePrototypeChain(Object.create(constr.prototype, {}), reducer, carry, stop);\n}\n"
   },
   {
     "__docId__": 1,
@@ -22,7 +22,7 @@
     "longname": "src/reducePrototypeChain.js~reducePrototypeChain",
     "access": null,
     "export": true,
-    "importPath": "@circle/reduce-prototype-chain/src/reducePrototypeChain.js",
+    "importPath": "@circle/reduce-prototype/src/reducePrototypeChain.js",
     "importStyle": "{reducePrototypeChain}",
     "description": "takes an object and reduces its prototype chain with\na given callback",
     "lineNumber": 13,
@@ -88,10 +88,10 @@
     "longname": "src/reducePrototypeChain.js~reduceInheritanceChain",
     "access": null,
     "export": true,
-    "importPath": "@circle/reduce-prototype-chain/src/reducePrototypeChain.js",
+    "importPath": "@circle/reduce-prototype/src/reducePrototypeChain.js",
     "importStyle": "{reduceInheritanceChain}",
     "description": "takes a class and reduces its prototype chain with\na given callback",
-    "lineNumber": 51,
+    "lineNumber": 35,
     "params": [
       {
         "nullable": null,

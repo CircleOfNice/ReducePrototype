@@ -5,6 +5,11 @@
 #
 SHELL:=/bin/bash
 
+##
+#  package name
+#
+PACKAGE:=ReducePrototype
+
 ###
 # Current Year
 #
@@ -55,21 +60,21 @@ INSTALLED_OBJECTS:= \
 #
 define LICENSE
 /*
- * This file is part of CoreWorker.
+ * This file is part of $(PACKAGE).
  *
- * CoreWorker is free software: you can redistribute it and/or modify
+ * $(PACKAGE) is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * CoreWorker is distributed in the hope that it will be useful,
+ * $(PACKAGE) is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with CoreWorker.  If not, see <http://www.gnu.org/licenses/>.
+ * along with $(PACKAGE).  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright $(YEAR) TeeAge-Beatz UG (haftungsbeschränkt)
+ * Copyright $(YEAR) CRCL UG (haftungsbeschränkt)
  */
 
 endef
@@ -102,6 +107,7 @@ clean:
 	rm -rf $(WORKING_DIR)/bin
 	rm -rf $(WORKING_DIR)/examples
 	rm -rf $(WORKING_DIR)/setupfile
+	rm -rf $(WORKING_DIR)/License_Template
 
 benchmark:
 	@make -s $(BENCHMARKS)

@@ -1,14 +1,14 @@
 window.esdocSearchIndex = [
   [
-    "@circle/reduce-prototype-chain/src/reduceprototypechain.js~reduceinheritancechain",
+    "@circle/reduce-prototype/src/reduceprototypechain.js~reduceinheritancechain",
     "function/index.html#static-function-reduceInheritanceChain",
-    "<span>reduceInheritanceChain</span> <span class=\"search-result-import-path\">@circle/reduce-prototype-chain/src/reducePrototypeChain.js</span>",
+    "<span>reduceInheritanceChain</span> <span class=\"search-result-import-path\">@circle/reduce-prototype/src/reducePrototypeChain.js</span>",
     "function"
   ],
   [
-    "@circle/reduce-prototype-chain/src/reduceprototypechain.js~reduceprototypechain",
+    "@circle/reduce-prototype/src/reduceprototypechain.js~reduceprototypechain",
     "function/index.html#static-function-reducePrototypeChain",
-    "<span>reducePrototypeChain</span> <span class=\"search-result-import-path\">@circle/reduce-prototype-chain/src/reducePrototypeChain.js</span>",
+    "<span>reducePrototypeChain</span> <span class=\"search-result-import-path\">@circle/reduce-prototype/src/reducePrototypeChain.js</span>",
     "function"
   ],
   [
