@@ -1,6 +1,6 @@
 {
   "name": "reduce-prototype",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "reduces an object's prototype chain",
   "main": "index.js",
   "scripts": {
