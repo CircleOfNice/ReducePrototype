@@ -2,9 +2,18 @@
   "source": "./src",
   "destination": "./docs",
   "plugins": [
-    {"name": "esdoc-es7-plugin"},
     {"name": "esdoc-flow-plugin"}
   ],
+  "experimentalProposal": {
+    "classProperties": true,
+    "objectRestSpread": true,
+    "decorators": true,
+    "doExpressions": true,
+    "functionBind": true,
+    "asyncGenerators": true,
+    "exportExtensions": true,
+    "dynamicImport": true
+  },
   "excludes": ["node_modules", "lib", "__tests__", "cpp"],
   "autoPrivate": false
 }

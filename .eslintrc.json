@@ -579,13 +579,5 @@
         2,
         15
       ]
-    },
-    "ecmaFeatures": {
-      "blockBindings": true,
-      "forOf": true,
-      "jsx": true,
-      "arrowFunctions": true,
-      "spread": true,
-      "modules": true
     }
   }

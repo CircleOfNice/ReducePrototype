@@ -1,5 +1,5 @@
 {
-  "name": "@circle/reduce-prototype",
+  "name": "reduce-prototype",
   "version": "1.0.0",
   "description": "reduces an object's prototype chain",
   "main": "index.js",
@@ -30,15 +30,14 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
-    "chai": "^3.5.0",
-    "esdoc": "^0.4.8",
-    "esdoc-es7-plugin": "0.0.3",
+    "chai": "^4.0.2",
+    "esdoc": "^0.5.2",
     "esdoc-flow-plugin": "^1.0.0",
-    "eslint": "^3.19.0",
-    "eslint-plugin-flowtype": "^2.33.0",
-    "flow-bin": "^0.46.0",
+    "eslint": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "flow-bin": "^0.48.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.4.1",
+    "mocha": "^3.4.2",
     "remap-istanbul": "^0.9.5"
   }
 }
