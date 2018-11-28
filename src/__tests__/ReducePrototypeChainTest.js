@@ -30,6 +30,7 @@ describe("reducePrototypeChainTest", function() {
         const instance       = new Duplex();
         const cb             = (dest, proto) => dest.concat(Object.getOwnPropertyNames(proto));
         const result         = reducePrototypeChain(instance, cb, []);
+
         const expectedResult = () => {
             if(NODE_MAJOR_VERSION < 8) return [
                 "constructor",
@@ -75,7 +76,7 @@ describe("reducePrototypeChainTest", function() {
                 "eventNames"
             ];
 
-            return [
+            if(NODE_MAJOR_VERSION < 10) return [
                 "constructor",
                 "write",
                 "cork",
@@ -121,6 +122,66 @@ describe("reducePrototypeChainTest", function() {
                 "removeListener",
                 "removeAllListeners",
                 "listeners",
+                "listenerCount",
+                "eventNames"
+            ];
+
+            return [
+                "constructor",
+                "write",
+                "cork",
+                "uncork",
+                "setDefaultEncoding",
+                "_write",
+                "_writev",
+                "end",
+                "writableHighWaterMark",
+                "writableBuffer",
+                "writableLength",
+                "destroyed",
+                "constructor",
+                "destroyed",
+                "destroy",
+                "_undestroy",
+                "_destroy",
+                "push",
+                "unshift",
+                "isPaused",
+                "setEncoding",
+                "read",
+                "_read",
+                "pipe",
+                "unpipe",
+                "on",
+                "addListener",
+                "removeListener",
+                "removeAllListeners",
+                "resume",
+                "pause",
+                "wrap",
+                "readableHighWaterMark",
+                "readableBuffer",
+                "readableFlowing",
+                "readableLength",
+                "constructor",
+                "pipe",
+                "constructor",
+                "_events",
+                "_eventsCount",
+                "_maxListeners",
+                "setMaxListeners",
+                "getMaxListeners",
+                "emit",
+                "addListener",
+                "on",
+                "prependListener",
+                "once",
+                "prependOnceListener",
+                "removeListener",
+                "off",
+                "removeAllListeners",
+                "listeners",
+                "rawListeners",
                 "listenerCount",
                 "eventNames"
             ];
@@ -160,7 +221,7 @@ describe("reducePrototypeChainTest", function() {
                 "pipe"
             ];
 
-            return [
+            if(NODE_MAJOR_VERSION < 10) return [
                 "constructor",
                 "write",
                 "cork",
@@ -189,6 +250,47 @@ describe("reducePrototypeChainTest", function() {
                 "resume",
                 "pause",
                 "wrap",
+                "constructor",
+                "pipe"
+            ];
+
+            return [
+                "constructor",
+                "write",
+                "cork",
+                "uncork",
+                "setDefaultEncoding",
+                "_write",
+                "_writev",
+                "end",
+                "writableHighWaterMark",
+                "writableBuffer",
+                "writableLength",
+                "destroyed",
+                "constructor",
+                "destroyed",
+                "destroy",
+                "_undestroy",
+                "_destroy",
+                "push",
+                "unshift",
+                "isPaused",
+                "setEncoding",
+                "read",
+                "_read",
+                "pipe",
+                "unpipe",
+                "on",
+                "addListener",
+                "removeListener",
+                "removeAllListeners",
+                "resume",
+                "pause",
+                "wrap",
+                "readableHighWaterMark",
+                "readableBuffer",
+                "readableFlowing",
+                "readableLength",
                 "constructor",
                 "pipe"
             ];
@@ -245,7 +347,7 @@ describe("reducePrototypeChainTest", function() {
                 "eventNames"
             ];
 
-            return [
+            if(NODE_MAJOR_VERSION < 10) return [
                 "constructor",
                 "write",
                 "cork",
@@ -294,6 +396,66 @@ describe("reducePrototypeChainTest", function() {
                 "listenerCount",
                 "eventNames"
             ];
+
+            return [
+                "constructor",
+                "write",
+                "cork",
+                "uncork",
+                "setDefaultEncoding",
+                "_write",
+                "_writev",
+                "end",
+                "writableHighWaterMark",
+                "writableBuffer",
+                "writableLength",
+                "destroyed",
+                "constructor",
+                "destroyed",
+                "destroy",
+                "_undestroy",
+                "_destroy",
+                "push",
+                "unshift",
+                "isPaused",
+                "setEncoding",
+                "read",
+                "_read",
+                "pipe",
+                "unpipe",
+                "on",
+                "addListener",
+                "removeListener",
+                "removeAllListeners",
+                "resume",
+                "pause",
+                "wrap",
+                "readableHighWaterMark",
+                "readableBuffer",
+                "readableFlowing",
+                "readableLength",
+                "constructor",
+                "pipe",
+                "constructor",
+                "_events",
+                "_eventsCount",
+                "_maxListeners",
+                "setMaxListeners",
+                "getMaxListeners",
+                "emit",
+                "addListener",
+                "on",
+                "prependListener",
+                "once",
+                "prependOnceListener",
+                "removeListener",
+                "off",
+                "removeAllListeners",
+                "listeners",
+                "rawListeners",
+                "listenerCount",
+                "eventNames"
+            ];
         };
 
         expect(result).to.eql(expectedResult());
@@ -329,7 +491,7 @@ describe("reducePrototypeChainTest", function() {
                 "pipe"
             ];
 
-            return [
+            if(NODE_MAJOR_VERSION < 10) return [
                 "constructor",
                 "write",
                 "cork",
@@ -361,8 +523,56 @@ describe("reducePrototypeChainTest", function() {
                 "constructor",
                 "pipe"
             ];
+
+            return [
+                "constructor",
+                "write",
+                "cork",
+                "uncork",
+                "setDefaultEncoding",
+                "_write",
+                "_writev",
+                "end",
+                "writableHighWaterMark",
+                "writableBuffer",
+                "writableLength",
+                "destroyed",
+                "constructor",
+                "destroyed",
+                "destroy",
+                "_undestroy",
+                "_destroy",
+                "push",
+                "unshift",
+                "isPaused",
+                "setEncoding",
+                "read",
+                "_read",
+                "pipe",
+                "unpipe",
+                "on",
+                "addListener",
+                "removeListener",
+                "removeAllListeners",
+                "resume",
+                "pause",
+                "wrap",
+                "readableHighWaterMark",
+                "readableBuffer",
+                "readableFlowing",
+                "readableLength",
+                "constructor",
+                "pipe"
+            ];
         };
 
         expect(reduceInheritanceChain(Duplex, cb, [], EventEmitter)).to.eql(expectedResult());
+    });
+
+    it("tries to stop at a prototype not in the chain", function() {
+        const constr = () => {};
+        const cb     = (dest, proto) => dest.concat(Object.getOwnPropertyNames(proto));
+
+        expect(reducePrototypeChain(Object.prototype, cb, [], constr)).to.eql([]);
     });
 });

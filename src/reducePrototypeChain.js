@@ -33,7 +33,7 @@ export type Reducer = (dest: *, proto: Object, instance: Object) => *;
 export function reducePrototypeChain(instance: Object, reducer: Reducer, carry: any, stop?: Function = Object): any {
     const proto = Object.getPrototypeOf(instance);
 
-    if(proto === stop.prototype) return carry;
+    if(!proto || proto === stop.prototype) return carry;
 
     const result = reducer(carry, proto, instance);
 
